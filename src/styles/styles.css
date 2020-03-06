@@ -132,7 +132,7 @@ nav ul li a {
   display: block;
   height: 2.2608696em; /* 52px / 23px  fallback */
   height: 2rem; /* 52px / 26px */
-  padding: 0.5em 0;
+  padding: 0.2em 0 0.7em;
 }
 
 nav ul li a span {
@@ -141,7 +141,16 @@ nav ul li a span {
   margin-top: -1.5em;
 }
 
-
+header #toggle-menu:focus, 
+nav ul li a:focus, 
+nav ul li a:hover {
+  /* color: #ffffff;
+  border: 1px solid #fff200;
+  background-color: #888888;
+  background-color: #fef767; */
+  color: #ffffff;
+  background-color:#474747;
+}
 
 /**
 *
