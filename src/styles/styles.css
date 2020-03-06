@@ -84,7 +84,7 @@ header nav.visible {
   height: 6.6923rem; /* 176px / 26px */ 
 }
 
-header .toggle-menu {
+header #toggle-menu {
   font-size: 1.2778em; /* 23px / 18px */
   line-height: 1.3043478; /* 30px / 23px */
   text-align: center;
@@ -93,7 +93,10 @@ header .toggle-menu {
   right: 0;
   min-width: 60px;
   padding: 0.6957em 5%;
+  border: none;
   background-color: #fff200;
+  text-transform: lowercase;
+  cursor: pointer;
 }
 
 nav ul li a {
@@ -137,7 +140,7 @@ nav ul li a {
   margin-bottom: 1em;
 }
 
-button {
+#buttons button {
   font-size: 1em;
   line-height: 1rem;
   font-family: Helvetica, Arial, sans-serif;
@@ -161,7 +164,7 @@ button {
   box-shadow: 0px 0px 2px #fff inset;
 }
 
-button.on {
+#buttons button.on {
   border: 1px solid #979009;
   background: #fef767;
   background: -moz-linear-gradient(top, #fef767, #fff200);

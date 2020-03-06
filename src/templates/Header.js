@@ -4,8 +4,8 @@ const Header = () => {
       <h1>
         <a href="/#/">Mascotas</a>
       </h1>
-      <a href="#menu" class="toggle-menu">Menú</a>
-      <nav class="header-nav" role="navigation">
+      <button id="toggle-menu">x</button>
+      <nav id="menu" class="header-nav visible" role="navigation">
         <ul>
           <li><a href="#/gatos">Gatos</a></li>
           <li><a href="#/perros">Perros</a></li>

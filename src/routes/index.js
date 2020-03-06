@@ -7,6 +7,7 @@ import Conejos from '../pages/Conejos';
 import Error404 from '../pages/Error404';
 import getHash from '../utils/getHash';
 import resolveRoutes from '../utils/resolveRoutes';
+import navUtils from '../utils/navUtils';
 
 const routes = {
   '/': Home,
@@ -26,6 +27,7 @@ const router = async () => {
   let route = await resolveRoutes(hash);
   let render = routes[route] ? routes[route] : Error404;
   content.innerHTML = await render();
+  navUtils();
 };
 
 export default router;
