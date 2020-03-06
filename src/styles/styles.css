@@ -113,6 +113,9 @@ nav ul li a {
 *
 */
 
+#content {
+  margin-bottom: 3rem;
+}
 
 #content h2 {
   background-color: #fef767;
@@ -120,6 +123,78 @@ nav ul li a {
   font-size: 1.3333333em;
   line-height: 2.25rem;
   margin: 50px 0 30px;
+  text-align: center;
+}
+
+.center {
+  text-align: center;
+}
+
+#buttons {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  margin-bottom: 1em;
+}
+
+button {
+  font-size: 1em;
+  line-height: 1rem;
+  font-family: Helvetica, Arial, sans-serif;
+  font-weight: bold;
+  padding: 0.4em 0.6em;
+  border: 1px solid #a3a3a3;
+  margin: 0.2em 0.3em;
+  cursor: pointer;
+  border-radius: 3px;
+  -moz-border-radius: 3px;
+  -webkit-border-radius: 3px;
+  background: #f5f5f5;
+  background: -moz-linear-gradient(top, #f5f5f5, #d3d3d3);
+  background: #f5f5f5 -webkit-gradient(linear, left top, left bottom, color-stop(0%,#f5f5f5), color-stop(100%,#d3d3d3));
+  background: -webkit-linear-gradient(top, #f5f5f5, #d3d3d3);
+  background: -ms-linear-gradient(top, #f5f5f5, #d3d3d3);
+  background: -o-linear-gradient(top, #f5f5f5, #d3d3d3);
+  background: linear-gradient(top, #f5f5f5, #d3d3d3);
+  -webkit-box-shadow: 0px 0px 2px #fff inset;
+  -moz-box-shadow: 0px 0px 2px #fff inset;
+  box-shadow: 0px 0px 2px #fff inset;
+}
+
+button.on {
+  border: 1px solid #979009;
+  background: #fef767;
+  background: -moz-linear-gradient(top, #fef767, #fff200);
+  background: #e1e7ec -webkit-gradient(linear, left top, left bottom, color-stop(0%,#a0c14d), color-stop(100%,#fff200));
+  background: -webkit-linear-gradient(top, #fef767, #fff200);
+  background: -ms-linear-gradient(top, #fef767, #fff200);
+  background: -o-linear-gradient(top, #fef767, #fff200);
+  background: linear-gradient(top, #fef767, #fff200);
+}
+
+form {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-bottom: 2em;
+}
+
+form label {
+  cursor: pointer;
+}
+
+form input {
+  display: block;
+  font-size: 1em; /* 18px */
+  line-height: 1.4444444em; /* 26px / 18px  fallback */
+  line-height: 1rem; /* 26px */
+  margin-top: 0.3888889em; /* 7px / 18px */
+  -webkit-box-shadow: 0px 0px 2px 0px #000000;
+  -moz-box-shadow: 0px 0px 2px 0px #000000;
+  box-shadow: 0px 0px 2px 0px #000000;
+}
+
+#lista {
   text-align: center;
 }
 
