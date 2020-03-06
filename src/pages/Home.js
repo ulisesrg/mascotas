@@ -1,17 +1,8 @@
-import getData from '../utils/getData';
-
-const Home = async () => {
-  const characters = await getData();
+const Home = () => {
   const view = `
-    <div class="Characters">
-      ${characters.results.map(character => `
-        <article class="Character-item">
-          <a href="#/${character.id}/">
-            <img src="${character.image}" alt="${character.name}">
-            <h2>${character.name}</h2>
-          </a>
-        </article>
-      `).join('')}
+    <div>
+      <h2>Bienvenido</h2>
+      <p>Ésta es una app donde puedes encontrar información sobre las mascotas más populares que puedes comprar</p>
     </div>
   `;
   return view;
