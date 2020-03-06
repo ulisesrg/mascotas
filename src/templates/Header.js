@@ -7,9 +7,24 @@ const Header = () => {
       <button id="toggle-menu">x</button>
       <nav id="menu" class="header-nav visible" role="navigation">
         <ul>
-          <li><a href="#/gatos">Gatos</a></li>
-          <li><a href="#/perros">Perros</a></li>
-          <li><a href="#/conejos">Conejos</a></li>
+          <li>
+            <a id="cat-link" href="#/gatos">
+              Gatos
+              <span>Tiernos e inteligentes</span>
+            </a>
+          </li>
+          <li>
+            <a id="dog-link" href="#/perros">
+              Perros
+              <span>Cariñosos y leales</span>
+            </a>
+          </li>
+          <li>
+            <a id="rabbit-link" href="#/conejos">
+              Conejos
+              <span>Callados y traviesos</span>
+            </a>
+          </li>
         </ul>
       </nav>
     </div>
