@@ -1,18 +1,17 @@
 const Header = () => {
   const view = `
-    <div class="Header-main">
-      <div class="Header-logo">
-        <h1>
-          <a href="/">
-            100tifi.co
-          </a>
-        </h1>
-      </div>
-      <div class="Header-nav">
-        <a href="#/about">
-          About
-        </a>
-      </div>
+    <div>
+      <h1>
+        <a href="/">mascotas</a>
+      </h1>
+      <a href="#menu" class="toggle-menu">Menú</a>
+      <nav class="header-nav" role="navigation">
+        <ul>
+          <li><a href="#/gatos">gatos</a></li>
+          <li><a href="#/perros">perros</a></li>
+          <li><a href="#/conejos">conejos</a></li>
+        </ul>
+      </nav>
     </div>
   `;
   return view;
