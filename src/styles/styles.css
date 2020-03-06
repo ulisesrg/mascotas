@@ -1,0 +1,119 @@
+@import url('https://fonts.googleapis.com/css?family=Open+Sans:300,400&display=swap');
+
+/**
+*
+* General
+*
+*/
+
+html {
+  font-size: 162.5%; /* 26px */
+}
+
+body {
+  font-size: 0.6923076em; /* 18px */
+  line-height: 1rem; /* 26px */
+  margin: 0;
+  font-family: 'Open Sans', sans-serif;
+}
+
+h1 {
+  font-size: 1.5555556em; /* 28px */
+  line-height: 1.4446429; 
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+ul,
+ol,
+dl,
+dd {
+  padding: 0;
+  margin: 0;
+}
+
+ul,
+ol {
+  list-style: none;
+}
+
+
+/**
+*
+* Header
+*
+*/
+
+header,
+nav#menu {
+  position: relative; /*para ser referencia del posicionamiento del toggle*/
+  text-transform: lowercase;
+  background-color: #fff200;
+}
+
+header h1 {
+  height: 1.4286em; /* 40px */
+  padding: 0.3571em 5% 0.4286em;
+  margin: 0;
+  color: #ffffff;
+  background-color: #000000;
+}
+
+header nav {
+  visibility: hidden;
+  /* display: none; */
+  height: 0;
+}
+
+header nav.visible {
+  visibility: visible;
+  height: 9.777778em; /* 176px / 18px  fallback */
+  height: 6.6923rem; /* 176px / 26px */ 
+}
+
+header .toggle-menu {
+  font-size: 1.2778em; /* 23px / 18px */
+  line-height: 1.3043478; /* 30px / 23px */
+  text-align: center;
+  position: absolute;
+  top: 0;
+  right: 0;
+  min-width: 60px;
+  padding: 0.6957em 5%;
+  background-color: #fff200;
+}
+
+nav ul li a {
+  font-size: 1.2778em; /* 23px / 18px */
+  line-height: 2.3478; /* 54px / 23px */
+  text-align: center;
+  display: block;
+  height: 2.2608696em; /* 52px / 23px  fallback */
+  height: 2rem; /* 52px / 26px */
+}
+
+
+
+
+
+
+.Main-loading {
+  border: 4px solid #f3f3f3;
+  border-top: 4px solid #3498db;
+  border-radius: 50%;
+  width: 20px;
+  height: 20px;
+  animation: spin 2s linear infinite;
+}
+
+@keyframes spin {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
