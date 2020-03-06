@@ -40,6 +40,16 @@ ol {
   list-style: none;
 }
 
+img {
+  border: none; /* for IE8 */
+}
+
+.wrap {
+  width: 90%;
+  max-width: 35.2777778em; /* 635px / 18px */
+  margin: 0 auto;
+}
+
 
 /**
 *
@@ -95,6 +105,23 @@ nav ul li a {
   height: 2rem; /* 52px / 26px */
 }
 
+
+
+/**
+*
+* Content
+*
+*/
+
+
+#content h2 {
+  background-color: #fef767;
+  display: block;
+  font-size: 1.3333333em;
+  line-height: 2.25rem;
+  margin: 50px 0 30px;
+  text-align: center;
+}
 
 
 
