@@ -1,14 +1,20 @@
 import Header from '../templates/Header';
 import Home from '../pages/Home';
 import Character from '../pages/Character';
+import Perros from '../pages/Perros';
+import Gatos from '../pages/Gatos';
+import Conejos from '../pages/Conejos';
 import Error404 from '../pages/Error404';
 import getHash from '../utils/getHash';
 import resolveRoutes from '../utils/resolveRoutes';
 
 const routes = {
   '/': Home,
+  '/#/': Home,
   '/:id': Character,
-  '/contact': 'Contact'
+  '/gatos': Gatos,
+  '/perros': Perros,
+  '/conejos': Conejos
 };
 
 const router = async () => {
