@@ -50,6 +50,10 @@ img {
   margin: 0 auto;
 }
 
+.hidden, 
+.t-hidden {
+  display: none;
+}
 
 /**
 *
@@ -199,6 +203,7 @@ form input {
 
 #lista {
   text-align: center;
+  min-height: 240px;
 }
 
 
