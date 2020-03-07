@@ -1,4 +1,4 @@
-const navUtils = () => {
+const navEvents = () => {
   const $menuButton = document.getElementById('toggle-menu');
   const $nav = document.getElementById('menu');
 
@@ -17,4 +17,4 @@ const navUtils = () => {
   })
 };
 
-export default navUtils;
+export default navEvents;

@@ -3,11 +3,9 @@ const filterDogs = () => {
   let cssClassesSize = '';
 
   const $textFilter = document.getElementById('filter');
-  const $buttonS = document.getElementById('btn-small');
-  const $buttonM = document.getElementById('btn-medium');
-  const $buttonB = document.getElementById('btn-big');
   const $allDogs = document.getElementsByClassName('dog');
   let $filteredDogs;
+  
 
   $textFilter.addEventListener('keyup', ev => {
     $filteredDogs = filteredByCategory(cssClassesSize);
@@ -31,43 +29,24 @@ const filterDogs = () => {
 
   document.querySelectorAll('#buttons button').forEach(item => {
     item.addEventListener('click', ev => {
+      // modifica la clase del botón de presionado a no presionado
       ev.target.classList.toggle('on');
-      // console.log(ev.target.id)
 
-
+      // toma cuál botón se presionó y se establece una selector css
       const cssClassSize = ev.target.id.replace('btn-', '.')
-      // console.log(cssClassSize)
       
+      // el selector css se toma para asignarlo como una categoría activa
       setActiveCategory(cssClassSize)
      
-
+      // el array de categorías activas se tranforma a selectores css
       cssClassesSize = activeCategories.join(', ');
 
-
-
-
+      // se filtran los resultados de acuerdo a esos selectores css
       if (activeCategories.length === 0) {
         showAllDogs();
-        // for (let i = 0; i < $allDogs.length; i++) {
-        //   $allDogs[i].classList.remove('hidden');
-        // }
       } else {
         filterDogsByCategory(cssClassesSize)
-        // const excludeClassQuery = ':not(' + activeCategories.join('):not(') + ')';
-        
-        // const $elementsToHide = document.querySelectorAll(
-        //   '.dog' + excludeClassQuery
-        // );
-        // for (let i = 0; i < $elementsToHide.length; i++) {
-        //   $elementsToHide[i].classList.add('hidden');
-        // }
-  
-        // const $elementsToShow = document.querySelectorAll(cssClassesSize);
-        // for (let i = 0; i < $elementsToShow.length; i++) {
-        //   $elementsToShow[i].classList.remove('hidden');
-        // }
       }
-
 
     })
   })
@@ -102,119 +81,10 @@ const filterDogs = () => {
     for (let i = 0; i < $elementsToShow.length; i++) {
       $elementsToShow[i].classList.remove('hidden');
     }
-
-    // return cssClassesSize;
   }
   
 
 };
-
-
-
-
-
-  // $buttonS.addEventListener('click', ev => {
-    // ev.currentTarget.classList.toggle('on');
-
-    // if (activeCategories.indexOf('.small') === -1) {
-    //   activeCategories.push('.small');
-    // } else {
-    //   activeCategories = activeCategories.filter(
-    //     cat => cat.indexOf('.small') === -1
-    //   );
-    // }
-
-    // cssClasses = activeCategories.join(', ');
-
-    // if (activeCategories.length === 0) {
-    //   for (let i = 0; i < $allDogs.length; i++) {
-    //     $allDogs[i].classList.remove('hidden');
-    //   }
-    // } else {
-    //   let excludeClassQuery = ':not(' + activeCategories.join('):not(') + ')';
-
-    //   const $elementsToHide = document.querySelectorAll(
-    //     '.dog' + excludeClassQuery
-    //   );
-    //   for (let i = 0; i < $elementsToHide.length; i++) {
-    //     $elementsToHide[i].classList.add('hidden');
-    //   }
-
-    //   const $elementsToShow = document.querySelectorAll(cssClassesSize);
-    //   for (let i = 0; i < $elementsToShow.length; i++) {
-    //     $elementsToShow[i].classList.remove('hidden');
-    //   }
-    // }
-  // });
-
-  // $buttonM.addEventListener('click', ev => {
-    // ev.currentTarget.classList.toggle('on');
-
-    // if (activeCategories.indexOf('.medium') === -1) {
-    //   activeCategories.push('.medium');
-    // } else {
-    //   activeCategories = activeCategories.filter(
-    //     cat => cat.indexOf('.medium') === -1
-    //   );
-    // }
-
-    // cssClasses = activeCategories.join(', ');
-
-    // if (activeCategories.length === 0) {
-    //   for (let i = 0; i < $allDogs.length; i++) {
-    //     $allDogs[i].classList.remove('hidden');
-    //   }
-    // } else {
-    //   let excludeClassQuery = ':not(' + activeCategories.join('):not(') + ')';
-
-    //   const $elementsToHide = document.querySelectorAll(
-    //     '.dog' + excludeClassQuery
-    //   );
-    //   // console.log($elementsToHide);
-    //   for (let i = 0; i < $elementsToHide.length; i++) {
-    //     $elementsToHide[i].classList.add('hidden');
-    //   }
-
-    //   const $elementsToShow = document.querySelectorAll(cssClassesSize);
-    //   for (let i = 0; i < $elementsToShow.length; i++) {
-    //     $elementsToShow[i].classList.remove('hidden');
-    //   }
-    // }
-  // });
-
-  // $buttonB.addEventListener('click', ev => {
-    // ev.currentTarget.classList.toggle('on');
-
-    // if (activeCategories.indexOf('.big') === -1) {
-    //   activeCategories.push('.big');
-    // } else {
-    //   activeCategories = activeCategories.filter(
-    //     cat => cat.indexOf('.big') === -1
-    //   );
-    // }
-
-    // cssClasses = activeCategories.join(', ');
-
-    // if (activeCategories.length === 0) {
-    //   for (let i = 0; i < $allDogs.length; i++) {
-    //     $allDogs[i].classList.remove('hidden');
-    //   }
-    // } else {
-    //   let excludeClassQuery = ':not(' + activeCategories.join('):not(') + ')';
-
-    //   const $elementsToHide = document.querySelectorAll(
-    //     '.dog' + excludeClassQuery
-    //   );
-    //   for (let i = 0; i < $elementsToHide.length; i++) {
-    //     $elementsToHide[i].classList.add('hidden');
-    //   }
-
-    //   const $elementsToShow = document.querySelectorAll(cssClassesSize);
-    //   for (let i = 0; i < $elementsToShow.length; i++) {
-    //     $elementsToShow[i].classList.remove('hidden');
-    //   }
-    // }
-  // });
 
 
 export default filterDogs;
