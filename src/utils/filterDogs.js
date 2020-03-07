@@ -38,7 +38,7 @@ const filterDogs = () => {
       const cssClassSize = ev.target.id.replace('btn-', '.')
       // console.log(cssClassSize)
       
-      setActiveCategories(cssClassSize)
+      setActiveCategory(cssClassSize)
      
 
       cssClassesSize = activeCategories.join(', ');
@@ -52,26 +52,27 @@ const filterDogs = () => {
         //   $allDogs[i].classList.remove('hidden');
         // }
       } else {
-        const excludeClassQuery = ':not(' + activeCategories.join('):not(') + ')';
+        filterDogsByCategory(cssClassesSize)
+        // const excludeClassQuery = ':not(' + activeCategories.join('):not(') + ')';
         
-        const $elementsToHide = document.querySelectorAll(
-          '.dog' + excludeClassQuery
-        );
-        for (let i = 0; i < $elementsToHide.length; i++) {
-          $elementsToHide[i].classList.add('hidden');
-        }
+        // const $elementsToHide = document.querySelectorAll(
+        //   '.dog' + excludeClassQuery
+        // );
+        // for (let i = 0; i < $elementsToHide.length; i++) {
+        //   $elementsToHide[i].classList.add('hidden');
+        // }
   
-        const $elementsToShow = document.querySelectorAll(cssClassesSize);
-        for (let i = 0; i < $elementsToShow.length; i++) {
-          $elementsToShow[i].classList.remove('hidden');
-        }
+        // const $elementsToShow = document.querySelectorAll(cssClassesSize);
+        // for (let i = 0; i < $elementsToShow.length; i++) {
+        //   $elementsToShow[i].classList.remove('hidden');
+        // }
       }
 
 
     })
   })
 
-  function setActiveCategories(cssClassSize) {
+  function setActiveCategory(cssClassSize) {
     if (activeCategories.indexOf(cssClassSize) === -1) {
       activeCategories.push(cssClassSize);
     } else {
@@ -85,6 +86,24 @@ const filterDogs = () => {
     for (let i = 0; i < $allDogs.length; i++) {
       $allDogs[i].classList.remove('hidden');
     }
+  }
+
+  function filterDogsByCategory(cssClassesSize) {
+    const excludeClassQuery = ':not(' + activeCategories.join('):not(') + ')';
+        
+    const $elementsToHide = document.querySelectorAll(
+      '.dog' + excludeClassQuery
+    );
+    for (let i = 0; i < $elementsToHide.length; i++) {
+      $elementsToHide[i].classList.add('hidden');
+    }
+
+    const $elementsToShow = document.querySelectorAll(cssClassesSize);
+    for (let i = 0; i < $elementsToShow.length; i++) {
+      $elementsToShow[i].classList.remove('hidden');
+    }
+
+    // return cssClassesSize;
   }
   
 
