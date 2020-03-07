@@ -16,7 +16,8 @@ const Perros = () => {
         <input type="text" name="" id="filter" value="" autocomplete="off">
       </form>
 
-      <div>
+      <div id="results">
+        <p id="message" class="hidden">No se encontraron resultados</p>
         <ul id="lista">
           <li class="fadeIn dog small">Chihuahua</li>
           <li class="fadeIn dog medium">Pastor alemán</li>
