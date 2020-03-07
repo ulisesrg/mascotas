@@ -5,7 +5,7 @@ const Header = async () => {
   const view = `
     <div>
       <h1>
-        <a href="/#/">Mascotas</a>
+        <a href="./#/">Mascotas</a>
       </h1>
       <button id="toggle-menu">Menú</button>
       <nav id="menu" class="header-nav" role="navigation">
