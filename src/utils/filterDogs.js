@@ -10,13 +10,13 @@ const filterDogs = () => {
   // Filtrado por texto
 
   $textFilter.addEventListener('keyup', ev => {
-    $filteredDogs = filteredByCategory(cssClassesSize);
+    $filteredDogs = filteredByClass('.dog');
     filterManageClass($filteredDogs, ev.target.value, 't-hidden');
     showNoResults();
   });
 
-  function filteredByCategory(selectors) {
-    return document.querySelectorAll(`.dog${selectors}, .dog:not(.t-hidden)`);
+  function filteredByClass(animalClass) {
+    return document.querySelectorAll(animalClass);
   }
 
   function filterManageClass(collection, searchText, cssClass) {
