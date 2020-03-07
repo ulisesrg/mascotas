@@ -1,6 +1,6 @@
 const Perros = () => {
   const view = `
-    <div>
+    <div class="fadeIn">
       <h2>Perros</h2>
       <p>Los perros son el mejor amigo del hombre. Existen varias razas en el mundo.</p> 
       <p class="center">Con estos botones puedes filtrarlos de acuerdo su tamaño:</p>
@@ -18,13 +18,13 @@ const Perros = () => {
 
       <div>
         <ul id="lista">
-          <li class="dog small">Chihuahua</li>
-          <li class="dog medium">Pastor alemán</li>
-          <li class="dog big">Gran Danés</li>
-          <li class="dog medium">Pitbull</li>
-          <li class="dog small">Pug</li>
-          <li class="dog big">San Bernardo</li>
-          <li class="dog medium">Doberman</li>
+          <li class="fadeIn dog small">Chihuahua</li>
+          <li class="fadeIn dog medium">Pastor alemán</li>
+          <li class="fadeIn dog big">Gran Danés</li>
+          <li class="fadeIn dog medium">Pitbull</li>
+          <li class="fadeIn dog small">Pug</li>
+          <li class="fadeIn dog big">San Bernardo</li>
+          <li class="fadeIn dog medium">Doberman</li>
         </ul>
       </div>
     </div>
