@@ -1,4 +1,7 @@
-const Header = () => {
+import getData from '../utils/getData';
+
+const Header = async () => {
+  const data = await getData();
   const view = `
     <div>
       <h1>
@@ -7,9 +10,27 @@ const Header = () => {
       <button id="toggle-menu">x</button>
       <nav id="menu" class="header-nav visible" role="navigation">
         <ul>
-          <li>
+          ${data.list.map(animal => `
+            <li>
+              <a id="${animal.species}-link" href="#/${animal.species.toLowerCase()}s">
+                <img src="${animal.iconURL}" alt="">
+                ${animal.species}
+                <span class="description">${animal.description}</span>
+              </a>
+            </li>
+          `).join('')}
+        </ul>
+      </nav>
+    </div>
+  `;
+  return view;
+};
+
+export default Header;
+
+{/* <li>
             <a id="cat-link" href="#/gatos">
-              Gatos
+              Gato
               <span>Tiernos e inteligentes</span>
             </a>
           </li>
@@ -24,12 +45,4 @@ const Header = () => {
               Conejos
               <span>Callados y traviesos</span>
             </a>
-          </li>
-        </ul>
-      </nav>
-    </div>
-  `;
-  return view;
-};
-
-export default Header;
+          </li> */}

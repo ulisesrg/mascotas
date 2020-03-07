@@ -1,11 +1,13 @@
-const API = 'https://rickandmortyapi.com/api/character/';
+// const API = 'http://ulisesrg.com/mascotas-assets/lista.php';
+const API = 'http://ulisesrg.com/mascotas-assets/lista.php';
 
-const getData = async (id) => {
-  const apiURl = id ? `${API}${id}` : API;
+const getData = async () => {
   try {
-    const response = await fetch(apiURl);
+    const response = await fetch(API);
     const data = await response.json();
+    console.log(data)
     return data;
+
   } catch (error) {
     console.log('Fetch Error', error);
   };

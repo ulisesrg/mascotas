@@ -55,6 +55,8 @@ img {
   display: none;
 }
 
+
+
 /**
 *
 * Header
@@ -103,7 +105,14 @@ header #toggle-menu {
   cursor: pointer;
 }
 
-nav ul li a::before {
+nav ul li img {
+  width: 1em;
+  height: 1em;
+  margin-right: 0.3em;
+  display: inline-block;
+}
+
+/* nav ul li a::before {
   content: '';
   width: 1em;
   height: 1em;
@@ -113,17 +122,17 @@ nav ul li a::before {
   background-size: 1em;
 }
 
-nav ul li a#cat-link::before {
+nav ul li a#Gato-link::before {
   background-image: url('http://www.ulisesrg.com/mascotas-assets/cat.png')
 }
 
-nav ul li a#dog-link::before {
+nav ul li a#Perro-link::before {
   background-image: url('http://www.ulisesrg.com/mascotas-assets/dog.png')
 }
 
-nav ul li a#rabbit-link::before {
+nav ul li a#Conejo-link::before {
   background-image: url('http://www.ulisesrg.com/mascotas-assets/rabbit.png')
-}
+} */
 
 nav ul li a {
   font-size: 1.2778em; /* 23px / 18px */
@@ -135,7 +144,7 @@ nav ul li a {
   padding: 0.2em 0 0.7em;
 }
 
-nav ul li a span {
+nav ul li a span.description {
   display: block;
   font-size: 0.5em;
   margin-top: -1.5em;
@@ -144,10 +153,6 @@ nav ul li a span {
 header #toggle-menu:focus, 
 nav ul li a:focus, 
 nav ul li a:hover {
-  /* color: #ffffff;
-  border: 1px solid #fff200;
-  background-color: #888888;
-  background-color: #fef767; */
   color: #ffffff;
   background-color:#474747;
 }
