@@ -277,6 +277,16 @@ form input {
   min-height: 240px;
 }
 
+.dog.small::after {
+  content: ' (chico)'
+}
+
+.dog.medium::after {
+  content: ' (mediano)'
+}
+.dog.big::after {
+  content: ' (grande)'
+}
 
 
 
