@@ -1,6 +1,5 @@
 import Header from '../templates/Header';
 import Home from '../pages/Home';
-import Character from '../pages/Character';
 import Perros from '../pages/Perros';
 import Gatos from '../pages/Gatos';
 import Conejos from '../pages/Conejos';
@@ -13,7 +12,6 @@ import filterDogs from '../utils/filterDogs';
 const routes = {
   '/': Home,
   '/#/': Home,
-  '/:id': Character,
   '/gatos': Gatos,
   '/perros': Perros,
   '/conejos': Conejos
