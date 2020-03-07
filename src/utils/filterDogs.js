@@ -16,7 +16,7 @@ const filterDogs = () => {
   });
 
   function filteredByCategory(selectors) {
-    return document.querySelectorAll(`.dog${selectors}`);
+    return document.querySelectorAll(`.dog${selectors}, .dog:not(.t-hidden)`);
   }
 
   function filterManageClass(collection, searchText, cssClass) {
