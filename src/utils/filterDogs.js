@@ -1,6 +1,6 @@
 const filterDogs = () => {
   let activeCategories = [];
-  let cssClasses = '';
+  let cssClassesSize = '';
 
   const $textFilter = document.getElementById('filter');
   const $buttonS = document.getElementById('btn-small');
@@ -10,11 +10,11 @@ const filterDogs = () => {
   let $filteredDogs;
 
   $textFilter.addEventListener('keyup', ev => {
-    $filteredDogs = filterByCategory(cssClasses);
+    $filteredDogs = filteredByCategory(cssClassesSize);
     filterManageClass($filteredDogs, ev.target.value, 't-hidden');
   });
 
-  function filterByCategory(selectors) {
+  function filteredByCategory(selectors) {
     return document.querySelectorAll(`.dog${selectors}`);
   }
 
@@ -28,18 +28,44 @@ const filterDogs = () => {
     }
   }
 
+
+  document.querySelectorAll('#buttons button').forEach(item => {
+    item.addEventListener('click', ev => {
+      ev.target.classList.toggle('on');
+      // console.log(ev.target.id)
+
+
+      const cssClassSize = ev.target.id.replace('btn-', '.')
+      // console.log(cssClassSize)
+      if (activeCategories.indexOf(cssClassSize) === -1) {
+        activeCategories.push(cssClassSize);
+      } else {
+        activeCategories = activeCategories.filter(
+          cat => cat.indexOf(cssClassSize) === -1
+        );
+      }
+
+      cssClassesSize = activeCategories.join(', ');
+
+
+    })
+  })
+
+
+
+
   $buttonS.addEventListener('click', ev => {
-    ev.currentTarget.classList.toggle('on');
+    // ev.currentTarget.classList.toggle('on');
 
-    if (activeCategories.indexOf('.small') === -1) {
-      activeCategories.push('.small');
-    } else {
-      activeCategories = activeCategories.filter(
-        cat => cat.indexOf('.small') === -1
-      );
-    }
+    // if (activeCategories.indexOf('.small') === -1) {
+    //   activeCategories.push('.small');
+    // } else {
+    //   activeCategories = activeCategories.filter(
+    //     cat => cat.indexOf('.small') === -1
+    //   );
+    // }
 
-    cssClasses = activeCategories.join(', ');
+    // cssClasses = activeCategories.join(', ');
 
     if (activeCategories.length === 0) {
       for (let i = 0; i < $allDogs.length; i++) {
@@ -55,7 +81,7 @@ const filterDogs = () => {
         $elementsToHide[i].classList.add('hidden');
       }
 
-      const $elementsToShow = document.querySelectorAll(cssClasses);
+      const $elementsToShow = document.querySelectorAll(cssClassesSize);
       for (let i = 0; i < $elementsToShow.length; i++) {
         $elementsToShow[i].classList.remove('hidden');
       }
@@ -63,17 +89,17 @@ const filterDogs = () => {
   });
 
   $buttonM.addEventListener('click', ev => {
-    ev.currentTarget.classList.toggle('on');
+    // ev.currentTarget.classList.toggle('on');
 
-    if (activeCategories.indexOf('.medium') === -1) {
-      activeCategories.push('.medium');
-    } else {
-      activeCategories = activeCategories.filter(
-        cat => cat.indexOf('.medium') === -1
-      );
-    }
+    // if (activeCategories.indexOf('.medium') === -1) {
+    //   activeCategories.push('.medium');
+    // } else {
+    //   activeCategories = activeCategories.filter(
+    //     cat => cat.indexOf('.medium') === -1
+    //   );
+    // }
 
-    cssClasses = activeCategories.join(', ');
+    // cssClasses = activeCategories.join(', ');
 
     if (activeCategories.length === 0) {
       for (let i = 0; i < $allDogs.length; i++) {
@@ -90,7 +116,7 @@ const filterDogs = () => {
         $elementsToHide[i].classList.add('hidden');
       }
 
-      const $elementsToShow = document.querySelectorAll(cssClasses);
+      const $elementsToShow = document.querySelectorAll(cssClassesSize);
       for (let i = 0; i < $elementsToShow.length; i++) {
         $elementsToShow[i].classList.remove('hidden');
       }
@@ -98,17 +124,17 @@ const filterDogs = () => {
   });
 
   $buttonB.addEventListener('click', ev => {
-    ev.currentTarget.classList.toggle('on');
+    // ev.currentTarget.classList.toggle('on');
 
-    if (activeCategories.indexOf('.big') === -1) {
-      activeCategories.push('.big');
-    } else {
-      activeCategories = activeCategories.filter(
-        cat => cat.indexOf('.big') === -1
-      );
-    }
+    // if (activeCategories.indexOf('.big') === -1) {
+    //   activeCategories.push('.big');
+    // } else {
+    //   activeCategories = activeCategories.filter(
+    //     cat => cat.indexOf('.big') === -1
+    //   );
+    // }
 
-    cssClasses = activeCategories.join(', ');
+    // cssClasses = activeCategories.join(', ');
 
     if (activeCategories.length === 0) {
       for (let i = 0; i < $allDogs.length; i++) {
@@ -124,7 +150,7 @@ const filterDogs = () => {
         $elementsToHide[i].classList.add('hidden');
       }
 
-      const $elementsToShow = document.querySelectorAll(cssClasses);
+      const $elementsToShow = document.querySelectorAll(cssClassesSize);
       for (let i = 0; i < $elementsToShow.length; i++) {
         $elementsToShow[i].classList.remove('hidden');
       }
