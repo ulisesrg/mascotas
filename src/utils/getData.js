@@ -1,4 +1,3 @@
-// const API = 'http://ulisesrg.com/mascotas-assets/lista.php';
 const API = 'http://ulisesrg.com/mascotas-assets/lista.php';
 
 const getData = async () => {

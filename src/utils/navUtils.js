@@ -7,6 +7,14 @@ const navUtils = () => {
 
     $nav.classList.toggle('visible');
   });
+
+  document.querySelectorAll('nav li').forEach(item => {
+    item.addEventListener('click', ev => {
+      if (ev.target.hash == location.hash) {
+        $nav.classList.remove('visible');
+      }
+    })
+  })
 };
 
 export default navUtils;

@@ -47,12 +47,10 @@ const filterDogs = () => {
       }
     } else {
       let excludeClassQuery = ':not(' + activeCategories.join('):not(') + ')';
-      // console.log(excludeClassQuery);
 
       const $elementsToHide = document.querySelectorAll(
         '.dog' + excludeClassQuery
       );
-      // console.log($elementsToHide);
       for (let i = 0; i < $elementsToHide.length; i++) {
         $elementsToHide[i].classList.add('hidden');
       }
@@ -75,7 +73,6 @@ const filterDogs = () => {
       );
     }
 
-    // console.log(activeCategories);
     cssClasses = activeCategories.join(', ');
 
     if (activeCategories.length === 0) {
@@ -84,7 +81,6 @@ const filterDogs = () => {
       }
     } else {
       let excludeClassQuery = ':not(' + activeCategories.join('):not(') + ')';
-      // console.log(excludeClassQuery);
 
       const $elementsToHide = document.querySelectorAll(
         '.dog' + excludeClassQuery
@@ -112,7 +108,6 @@ const filterDogs = () => {
       );
     }
 
-    // console.log(activeCategories);
     cssClasses = activeCategories.join(', ');
 
     if (activeCategories.length === 0) {
@@ -121,12 +116,10 @@ const filterDogs = () => {
       }
     } else {
       let excludeClassQuery = ':not(' + activeCategories.join('):not(') + ')';
-      // console.log(excludeClassQuery);
 
       const $elementsToHide = document.querySelectorAll(
         '.dog' + excludeClassQuery
       );
-      // console.log($elementsToHide);
       for (let i = 0; i < $elementsToHide.length; i++) {
         $elementsToHide[i].classList.add('hidden');
       }
