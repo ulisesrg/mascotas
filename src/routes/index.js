@@ -1,14 +1,20 @@
 import Header from '../templates/Header';
 import Home from '../pages/Home';
-import Character from '../pages/Character';
+import Perros from '../pages/Perros';
+import Gatos from '../pages/Gatos';
+import Conejos from '../pages/Conejos';
 import Error404 from '../pages/Error404';
 import getHash from '../utils/getHash';
 import resolveRoutes from '../utils/resolveRoutes';
+import navEvents from '../utils/navEvents';
+import filterDogs from '../utils/filterDogs';
 
 const routes = {
   '/': Home,
-  '/:id': Character,
-  '/contact': 'Contact'
+  '/#/': Home,
+  '/gatos': Gatos,
+  '/perros': Perros,
+  '/conejos': Conejos
 };
 
 const router = async () => {
@@ -20,6 +26,12 @@ const router = async () => {
   let route = await resolveRoutes(hash);
   let render = routes[route] ? routes[route] : Error404;
   content.innerHTML = await render();
+
+  navEvents();
+
+  if (location.hash === '#/perros') {
+    filterDogs();
+  }
 };
 
 export default router;

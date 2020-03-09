@@ -1,18 +1,26 @@
-const Header = () => {
+import getData from '../utils/getData';
+
+const Header = async () => {
+  const data = await getData();
   const view = `
-    <div class="Header-main">
-      <div class="Header-logo">
-        <h1>
-          <a href="/">
-            100tifi.co
-          </a>
-        </h1>
-      </div>
-      <div class="Header-nav">
-        <a href="#/about">
-          About
-        </a>
-      </div>
+    <div>
+      <h1>
+        <a href="./#/">Mascotas</a>
+      </h1>
+      <button id="toggle-menu">Menú</button>
+      <nav id="menu" class="header-nav" role="navigation">
+        <ul>
+          ${data.list.map(animal => `
+            <li>
+              <a id="${animal.species}-link" href="#/${animal.species.toLowerCase()}s">
+                <img src="${animal.iconURL}" alt="">
+                ${animal.species}s
+                <span class="description">${animal.description}</span>
+              </a>
+            </li>
+          `).join('')}
+        </ul>
+      </nav>
     </div>
   `;
   return view;
